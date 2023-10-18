@@ -9,5 +9,8 @@ with open(csvpath) as csvfile:
 
     print(csvreader)
 
-    csv_header =(next(csvreader))
+    csv_header =next(csvreader)
     print(f"CSV Header: {csv_header}")
+
+    for row in csvreader:
+        print(row)
