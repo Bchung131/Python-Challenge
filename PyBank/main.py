@@ -5,11 +5,7 @@ import csv
 #Creates the file path.
 csvpath = os.path.join('Resources','budget_data.csv')
 
-#Makes the CSV readable.
-with open(csvpath) as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=',')
-
-#Prints the CSV Header.
+#Makes the CSV readable and prints the CSV Header.
 with open(csvpath) as finanical_data:
     csvreader = csv.reader(finanical_data, delimiter=',')
     csv_header = next(csvreader)
