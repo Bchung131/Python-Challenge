@@ -15,8 +15,7 @@ with open(csvpath) as finanical_data:
     profit_loss_rev = []
     month_counter = []
     profit_loss_diff = []
-    
-    
+
     for row in csvreader:
         month_counter.append(row[0])
         profit_loss_rev.append(int(row[1]))
@@ -43,7 +42,7 @@ greatest_increase_date = month_counter[profit_loss_diff.index(greatest_increase)
 greatest_decrease = min(profit_loss_diff)
 greatest_decrease_date = month_counter[profit_loss_diff.index(greatest_decrease) + 1]
 
-#Prints out the financial analysis results
+#Prints out the financial analysis results.
 print("Financial Analysis")
 print("--------------------------------------")
 print(f"Total Months: {total_months}")
@@ -52,14 +51,14 @@ print(f"Average Change: ${average_change:.2f}")
 print(f"Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})")
 print(f"Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})")
 
-#Creates an outpath to a text file
+#Creates an outpath to a text file.
 csv_output_path = os.path.join("analysis", "Financial Analysis")
-  
+
 with open(csv_output_path, 'w') as csvfile:
 
      csvwriter = csv.writer(csvfile,)
 
-  #Writes analysis results to a text file
+  #Writes analysis results to a text file.
 
      csvwriter.writerow(["Financial Analysis"])
      csvwriter.writerow(["--------------------------------------"])
